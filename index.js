@@ -13,3 +13,4 @@ setInterval(() => log(i) || i++, 1000)
 app.all('/', (req, res) => res.send('I\'m alive'))
 
 app.listen(process.env.PORT, () => log(`Listening to port ${process.env.PORT}`))
+

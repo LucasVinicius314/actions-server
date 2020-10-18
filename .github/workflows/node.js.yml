@@ -18,9 +18,12 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Node Setup
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - run: npm i
-    - run: npm start
+    - name: Node Start
+      run: npm i
+      run: npm start
+      env:
+        TEST_NAME: ${{ secrets.TEST_NAME }}
